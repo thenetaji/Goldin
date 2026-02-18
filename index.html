@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goldin</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="home-screen" id="homeScreen">
+      <h1>Goldin</h1>
+      <p>Match the target color by adjusting the sliders.</p>
+
+      <div class="modes-container">
+        <p class="modes-title">Select Difficulty:</p>
+        <div class="modes-buttons">
+          <button class="mode-btn" data-mode="easy" id="easyBtn">
+            <span class="mode-name">Easy</span>
+            <span class="mode-info">90s • Simple Colors</span>
+          </button>
+          <button class="mode-btn" data-mode="medium" id="mediumBtn">
+            <span class="mode-name">Medium</span>
+            <span class="mode-info">60s • Normal Colors</span>
+          </button>
+          <button class="mode-btn" data-mode="hard" id="hardBtn">
+            <span class="mode-name">Hard</span>
+            <span class="mode-info">40s • Complex Colors</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-container" id="gameContainer" style="display: none">
+      <h1>Color Match Challenge</h1>
+
+      <div class="timer" id="timer">60s</div>
+
+      <div class="colors-display">
+        <div class="color-box" id="targetColor">
+          <div class="color-label">Target</div>
+        </div>
+        <div class="color-box" id="yourColor">
+          <div class="color-label">Your Match</div>
+        </div>
+      </div>
+
+      <div class="sliders-container">
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Hue</span>
+            <span class="slider-value" id="hueValue">180°</span>
+          </div>
+          <input type="range" id="hueSlider" min="0" max="360" value="180" />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Lightness</span>
+            <span class="slider-value" id="lightnessValue">50%</span>
+          </div>
+          <input
+            type="range"
+            id="lightnessSlider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Saturation</span>
+            <span class="slider-value" id="saturationValue">50%</span>
+          </div>
+          <input
+            type="range"
+            id="saturationSlider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="submit-btn" id="submitBtn">Submit Match</button>
+        <button class="new-game-btn" id="newGameBtn">New Game</button>
+      </div>
+
+      <div id="result"></div>
+      <div class="score-info" id="scoreInfo"></div>
+    </div>
+
+    <div class="result-modal" id="resultModal">
+      <div class="modal-content">
+        <div class="modal-result" id="modalResult"></div>
+        <div class="modal-score" id="modalScore"></div>
+        <div class="modal-details">
+          <p id="modalMode"></p>
+          <p id="modalTimeLeft"></p>
+        </div>
+        <div class="modal-buttons">
+          <button class="modal-btn" id="shareBtn">
+            <i class="bi bi-share"></i> Share Score
+          </button>
+          <button class="modal-btn" id="nextGameBtn">
+            <i class="bi bi-arrow-repeat"></i>
+            Next Game
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="scoreCanvas" style="display: none"></canvas>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
