@@ -18,7 +18,8 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #3e2f21 0%, #5a4a3a 100%);
+  background: url("./desert-doom-sand-dunes-dark-background-monochrome-landscape-3840x2160-6409.jpg")
+    no-repeat center center fixed;
   min-height: 100vh;
   display: flex;
   justify-content: center;
